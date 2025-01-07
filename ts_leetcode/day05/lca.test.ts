@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test';
 import { arrayToBinaryTree, lowestCommonAncestor, lowestCommonAncestor2, TreeNode } from './lca';
 
-describe('1', () => {
+describe('lowestCommonAncestor', () => {
   test('Example 1: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8', () => {
     const tree = [6, 2, 8, 0, 4, 7, 9, null, null, 3, 5];
     const p = new TreeNode(2);
@@ -52,7 +52,7 @@ describe('1', () => {
 });
 
 
-describe('2', () => {
+describe('lowestCommonAncestor2', () => {
   test('Example 1: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8', () => {
     const tree = [6, 2, 8, 0, 4, 7, 9, null, null, 3, 5];
     const p = new TreeNode(2);
