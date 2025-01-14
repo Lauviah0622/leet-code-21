@@ -76,3 +76,42 @@ export function binaryTreeToArray(root: TreeNode | null): (number | null)[] {
 
   return result;
 }
+
+export class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val: number, next: ListNode | null = null) {
+      this.val = val
+      this.next = next;
+  }
+  print(depth: number) {
+    if (depth === 0) return
+    console.log(this.val)
+    this.next?.print(depth - 1)
+  }
+}
+
+export function createCycleLinkList(arr: number[], tail: number) {
+  const head = new ListNode(arr.shift()!);
+  const nodes = [head]
+  let current = head
+
+  while (arr.length > 0) {
+    const val = arr.shift();
+    if (val === undefined) break;
+
+    const n = new ListNode(val)
+
+    nodes.push(n);
+    current.next = n;
+    current = n;
+  }
+
+  console.log('nodes', nodes);
+    
+
+  current.next = nodes?.[tail] ?? null
+
+  return head
+
+}
